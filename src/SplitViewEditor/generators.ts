@@ -1,33 +1,31 @@
 import MarkdownIt from 'markdown-it';
 
 // @ts-ignore
-import transform from '@doc-tools/transform';
+import transform from '@diplodoc/transform';
 // @ts-ignore
-import transformMarkdown from '@doc-tools/transform/lib/md';
+import transformMarkdown from '@diplodoc/transform/lib/md';
 
-import {
-    mdRenderer,
-} from '@diplodoc/markdown-it-markdown-renderer';
+import {mdRenderer} from '@diplodoc/markdown-it-markdown-renderer';
 
 // @ts-ignore
- import meta from 'markdown-it-meta';
+import meta from 'markdown-it-meta';
 // @ts-ignore
 import sup from 'markdown-it-sup';
-import notes from '@doc-tools/transform/lib/plugins/notes';
-import cut from '@doc-tools/transform/lib/plugins/cut';
-import checkbox from '@doc-tools/transform/lib/plugins/checkbox';
-import anchors from '@doc-tools/transform/lib/plugins/anchors';
-import monospace from '@doc-tools/transform/lib/plugins/monospace';
-import imsize from '@doc-tools/transform/lib/plugins/imsize';
-import file from '@doc-tools/transform/lib/plugins/file';
-import includes from '@doc-tools/transform/lib/plugins/includes';
-import tabs from '@doc-tools/transform/lib/plugins/tabs';
-import video from '@doc-tools/transform/lib/plugins/video';
-import table from '@doc-tools/transform/lib/plugins/table';
+import notes from '@diplodoc/transform/lib/plugins/notes';
+import cut from '@diplodoc/transform/lib/plugins/cut';
+import checkbox from '@diplodoc/transform/lib/plugins/checkbox';
+import anchors from '@diplodoc/transform/lib/plugins/anchors';
+import monospace from '@diplodoc/transform/lib/plugins/monospace';
+import imsize from '@diplodoc/transform/lib/plugins/imsize';
+import file from '@diplodoc/transform/lib/plugins/file';
+import includes from '@diplodoc/transform/lib/plugins/includes';
+import tabs from '@diplodoc/transform/lib/plugins/tabs';
+import video from '@diplodoc/transform/lib/plugins/video';
+import table from '@diplodoc/transform/lib/plugins/table';
 
 const diplodocOptions = {
-    lang: 'en',
-    path: '',
+  lang: 'en',
+  path: '',
 };
 
 function generateMD(input: string) {
@@ -50,7 +48,7 @@ function generateMD(input: string) {
 
   try {
     return md.render(input, {source: input.split('\n')});
-  } catch(e) {
+  } catch (e) {
     console.error(e);
     return '';
   }
